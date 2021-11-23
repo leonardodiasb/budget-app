@@ -1,0 +1,14 @@
+<%= form_with model: @entity, url: user_group_entities_path(@user.id, @group.id), method: :post do |form| %>
+  <h2>Add Entity</h2>
+  <div class="field">
+    <%= form.label :name %><br>
+    <%= form.text_field :name, :required => true %>
+  </div>
+  <div class="field">
+    <%= form.label :amount %><br>
+    <%= form.number_field :amount %>
+  </div>
+  <div>
+    <%= form.submit "Add entity" %>
+  </div>
+<% end %>

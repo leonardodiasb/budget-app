@@ -3,11 +3,18 @@ class GroupsController < ApplicationController
   
   def index
     @user = current_user
+    @groups = Group.all
+  end
+
+  def show
+    @user = current_user
+    @group = Group.find(params[:id])
+    @entities = @group.entities
   end
 
   def new
     @user = current_user
-    group = Group.new
+    @group = Group.new
   end
   
   def create
@@ -16,7 +23,7 @@ class GroupsController < ApplicationController
 
     if group.save
       flash[:notice] = 'Group created correctly'
-      redirect_to user_groups(user.id)
+      redirect_to user_groups_path(user.id)
     else
       flash[:error] = 'Group not created'
       render :new
@@ -26,6 +33,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, :icon)
   end
 end

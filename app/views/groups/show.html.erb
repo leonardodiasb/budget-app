@@ -1,0 +1,33 @@
+<%= link_to "Back", user_groups_path(@user.id) %>
+<h1>this is the group show page</h1>
+<div>
+  <h1>ENTITIES</h1>
+</div>
+<div>
+  <p>Group 1</p>
+</div>
+<div>
+  <div><p>Total:</p></div>
+  <div><p>1111</p></div>
+</div>
+<ul class="" style="">
+  <% @entities.each do |entity| %>
+    <%= link_to user_group_entity_path(user_id: @user.id, group_id: @group.id, id: entity.id) do %>
+      <li class="">
+        <div class="">
+          <div>
+            <div class="">
+              <%= entity.name %>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+  <% if @entities.length == 0 %>
+    <li>
+      <h2>There is no entities yet. Please create one.</h2>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Add Entity', new_user_group_entity_path(@user.id, @group.id), class: "btn btn-success" %>

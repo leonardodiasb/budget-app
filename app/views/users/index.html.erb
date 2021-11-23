@@ -1,2 +1,4 @@
 <h1>Hi rails</h1>
-<<%= link_to 'groups', user_groups_path(@user.id) %>>
+<% if current_user %>
+  <%= link_to 'groups', user_groups_path(@user.id) %>
+<% end %>

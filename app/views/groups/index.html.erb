@@ -1,4 +1,3 @@
-<%= link_to "Back", :back %>
 <h1>this is the group index page</h1>
 <div>
   <h1>GROUPS</h1>
@@ -10,6 +9,24 @@
   <div><p>Total:</p></div>
   <div><p>0000</p></div>
 </div>
-<div>
-</div>
+<ul class="" style="">
+  <% @groups.includes(:user).each do |group| %>
+    <%= link_to user_group_path(user_id: @user.id, id: group.id) do %>
+      <li class="">
+        <div class="">
+          <div>
+            <div class="">
+              <%= group.name %>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+  <% if @groups.length == 0 %>
+    <li>
+      <h2>There is no groups yet. Please create one.</h2>
+    </li>
+  <% end %>
+</ul>
 <%= link_to 'Add Group', new_user_group_path(@user.id), class: "btn btn-success" %>
