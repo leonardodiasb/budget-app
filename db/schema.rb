@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_152200) do
+ActiveRecord::Schema.define(version: 2021_11_23_113823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,13 +24,9 @@ ActiveRecord::Schema.define(version: 2021_11_22_152200) do
     t.index ["user_id"], name: "index_entities_on_user_id"
   end
 
-  create_table "group_entities", force: :cascade do |t|
-    t.bigint "group_id", null: false
-    t.bigint "entity_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["entity_id"], name: "index_group_entities_on_entity_id"
-    t.index ["group_id"], name: "index_group_entities_on_group_id"
+  create_table "entities_groups", id: false, force: :cascade do |t|
+    t.integer "entity_id"
+    t.integer "group_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -60,7 +56,5 @@ ActiveRecord::Schema.define(version: 2021_11_22_152200) do
   end
 
   add_foreign_key "entities", "users"
-  add_foreign_key "group_entities", "entities"
-  add_foreign_key "group_entities", "groups"
   add_foreign_key "groups", "users"
 end
