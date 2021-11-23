@@ -18,7 +18,12 @@
 @import "bootstrap/variables";
 
 $theme-colors: (
-  primary: #3778c2
+  primary: #3778c2,
+  secondary: #989da3
 );
 
 @import "bootstrap";
+
+body {
+  background-color: #f5f6f8;
+}

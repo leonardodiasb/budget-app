@@ -6,5 +6,9 @@ Rails.application.routes.draw do
     end
   end
 
+  authenticated :user do
+    root :to => 'groups#index', as: :authenticated_root
+  end
+
   root 'users#index'
 end
