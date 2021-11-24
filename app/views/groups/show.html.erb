@@ -4,8 +4,8 @@
         <%= link_to user_groups_path(@user.id), class: "text-white" do %> 
           <i class="bi bi-arrow-left-short", style="font-size: 44px"></i>
         <% end %>
-        <p class="navbar-brand m-0">ENTITIES</p>
-        <button class="navbar-toggler invisible" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <p class="navbar-brand m-0">TRANSACTIONS</p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -41,8 +41,8 @@
   <% end %>
   <% if @entities.length == 0 %>
     <li>
-      <h2>There is no entities yet. Please create one.</h2>
+      <p>There is no transactions yet. Please create one.</p>
     </li>
   <% end %>
 </ul>
-<%= link_to 'Add Entity', new_user_group_entity_path(@user.id, @group.id), class: "m-3 btn btn-outline-primary" %>
+<%= link_to 'Add Transaction', new_user_group_entity_path(@user.id, @group.id), class: "m-3 btn btn-outline-primary" %>

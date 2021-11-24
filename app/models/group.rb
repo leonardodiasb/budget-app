@@ -14,7 +14,7 @@ class Group < ApplicationRecord
                   'Personal Spendings', 'Recreation & Entertainment', 'Miscellaneous']
     something = ''
     icon_class = %w[house bicycle basket3 hammer shield-check heart piggy-bank cash-coin
-                    joystic gem]
+                    joystick gem]
     icon_array.each_with_index do |i, index|
       something = icon_class[index] if icon == i
     end

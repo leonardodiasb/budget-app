@@ -4,7 +4,7 @@
         <%= link_to :back, class: "text-white" do %> 
           <i class="bi bi-arrow-left-short", style="font-size: 44px"></i>
         <% end %>
-        <p class="navbar-brand m-0">NEW ENTITIES</p>
+        <p class="navbar-brand m-0">NEW TRANSACTION</p>
         <button class="navbar-toggler invisible" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,10 +28,10 @@
     <hr class="m-0 p-0 align-self-center" style="height:1px;width:90%;border-width:0;color:#989da3;background-color:#989da3">
     <div class="">
       <%= form.label :amount, class: "d-none" %>
-      <%= form.number_field :amount, class: "p-2 ps-3 w-100 border-0", style: "color: #989da3" , placeholder: "Amount", step: 0.01 %>
+      <%= form.number_field :amount, class: "p-2 ps-3 w-100 border-0", style: "color: #989da3" , placeholder: "Amount", step: 0.01, :required => true %>
     </div>
   </div>
   <div>
-    <%= form.submit "Add entity", class: "m-3 btn btn-outline-secondary" %>
+    <%= form.submit "Save", class: "m-3 btn btn-outline-secondary" %>
   </div>
 <% end %>

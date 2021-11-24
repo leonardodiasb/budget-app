@@ -1,11 +1,11 @@
 <header style="background-color: #3778c2;">
     <nav class="navbar navbar-expand-lg navbar-dark p-0">
       <div class="container-fluid">
-        <%= link_to :back, class: "text-white" do %> 
+        <%= link_to :back, class: "text-white invisible" do %> 
           <i class="bi bi-arrow-left-short", style="font-size: 44px"></i>
         <% end %>
-        <p class="navbar-brand m-0">GROUPS</p>
-        <button class="navbar-toggler invisible" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <p class="navbar-brand m-0">CATEGORIES</p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -44,8 +44,8 @@
   <% end %>
   <% if @groups.length == 0 %>
     <li>
-      <h2>There is no groups yet. Please create one.</h2>
+      <p>There is no category yet. Please create one.</p>
     </li>
   <% end %>
 </ul>
-<%= link_to 'Add Group', new_user_group_path(@user.id), class: "m-3 btn btn-outline-primary" %>
+<%= link_to 'Add Category', new_user_group_path(@user.id), class: "m-3 btn btn-outline-primary" %>
