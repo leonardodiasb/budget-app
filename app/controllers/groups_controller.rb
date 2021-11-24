@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @user = current_user
     @groups = @user.groups
@@ -17,8 +17,10 @@ class GroupsController < ApplicationController
   def new
     @user = current_user
     @group = Group.new
+    @icons = ['Housing', 'Transportation', 'Food', 'Utilities', 'Insurance', 'Healthcare', 'Savings & Investments',
+              'Personal Spendings', 'Recreation & Entertainment', 'Miscellaneous']
   end
-  
+
   def create
     user = current_user
     group = user.groups.new(group_params)

@@ -1,8 +1,9 @@
 class EntitiesController < ApplicationController
   def show
+    @group = Group.find(params[:group_id])
     @entity = Entity.find(params[:id])
   end
-  
+
   def new
     @user = current_user
     @group = Group.find(params[:group_id])

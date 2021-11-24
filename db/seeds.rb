@@ -15,13 +15,13 @@ leo = User.create!(
 
 market = Group.create!(
   name: 'Market',
-  icon: 'mkt',
+  icon: 'Food',
   user_id: leo.id
 )
 
 travel = Group.create!(
   name: 'Travel',
-  icon: 'travel',
+  icon: 'Transportation',
   user_id: leo.id
 )
 

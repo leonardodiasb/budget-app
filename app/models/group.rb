@@ -8,4 +8,16 @@ class Group < ApplicationRecord
   def total_expenses_group
     entities.sum(:amount)
   end
+
+  def icon_img
+    icon_array = ['Housing', 'Transportation', 'Food', 'Utilities', 'Insurance', 'Healthcare', 'Savings & Investments',
+                  'Personal Spendings', 'Recreation & Entertainment', 'Miscellaneous']
+    something = ''
+    icon_class = %w[house bicycle basket3 hammer shield-check heart piggy-bank cash-coin
+                    joystic gem]
+    icon_array.each_with_index do |i, index|
+      something = icon_class[index] if icon == i
+    end
+    something
+  end
 end
