@@ -19,11 +19,25 @@
 
 $theme-colors: (
   primary: #3778c2,
-  secondary: #989da3
+  secondary: #434c55,
+  // secondary: #555e67,
+  // secondary: #878a8f,
+  // secondary: #989da3
 );
 
 @import "bootstrap";
 
 body {
   background-color: #f5f6f8;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

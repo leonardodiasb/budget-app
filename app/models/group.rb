@@ -3,5 +3,9 @@ class Group < ApplicationRecord
   has_and_belongs_to_many :entities, optional: true
 
   validates :name, presence: true
-  # validates :icon, presence: true
+  validates :icon, presence: true
+
+  def total_expenses_group
+    entities.sum(:amount)
+  end
 end

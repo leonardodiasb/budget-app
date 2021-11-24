@@ -3,13 +3,15 @@ class GroupsController < ApplicationController
   
   def index
     @user = current_user
-    @groups = Group.all
+    @groups = @user.groups
+    @total = @user.total_expenses_user
   end
 
   def show
     @user = current_user
     @group = Group.find(params[:id])
-    @entities = @group.entities
+    @entities = @group.entities.order(created_at: :desc)
+    @total = @group.total_expenses_group
   end
 
   def new

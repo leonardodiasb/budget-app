@@ -1,14 +1,17 @@
 <%= form_with model: @group, url: user_groups_path(@user.id), method: :post do |form| %>
-  <h2>Add Group</h2>
-  <div class="field">
-    <%= form.label :name %><br>
-    <%= form.text_field :name, :required => true %>
+  <div class="mt-4 border-top border-bottom h-auto d-flex flex-column" >
+    <div class="">
+      <%= form.label :name, class: "d-none" %>
+      <%= form.text_field :name, class: "p-2 ps-3 w-100 border-0", style: "color: #989da3" , placeholder: "Name", :required => true %>
+    </div>
+    <hr class="m-0 p-0 align-self-center" style="height:1px;width:90%;border-width:0;color:#989da3;background-color:#989da3">
+    <div class="">
+      <%= form.label :icon, class: "d-none" %>
+      <%= form.text_field :icon, class: "p-2 ps-3 w-100 border-0", style: "color: #989da3" , placeholder: "Icon", :required => true %>
+    </div>
   </div>
-  <div class="field">
-    <%= form.label :icon %><br>
-    <%= form.text_field :icon %>
-  </div>
-  <div>
-    <%= form.submit "Add group" %>
+  <div class="d-flex justify-content-between">
+    <%= form.submit "Add group", class: "m-3 btn btn-outline-secondary" %>
+    <%= link_to "Back", :back, class: "m-3 btn btn-outline-primary" %>
   </div>
 <% end %>

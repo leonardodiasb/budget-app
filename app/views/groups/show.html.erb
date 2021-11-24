@@ -1,24 +1,18 @@
-<%= link_to "Back", user_groups_path(@user.id) %>
-<h1>this is the group show page</h1>
-<div>
-  <h1>ENTITIES</h1>
+<div class="d-flex p-3 justify-content-between align-items-center bg-white border-bottom">
+  <div><p class="m-0" style="color: #878a8f;">Total:</p></div>
+  <div><p class="m-0" style="color: #434c55;">$<%= @total %></p></div>
 </div>
-<div>
-  <p>Group 1</p>
-</div>
-<div>
-  <div><p>Total:</p></div>
-  <div><p>1111</p></div>
-</div>
-<ul class="" style="">
+<ul class="d-flex flex-column ms-3 me-3" style="">
   <% @entities.each do |entity| %>
     <%= link_to user_group_entity_path(user_id: @user.id, group_id: @group.id, id: entity.id) do %>
-      <li class="">
-        <div class="">
+      <li class="mt-3 p-2 bg-white shadow-sm bg-body">
+        <div class="mt-2 d-flex justify-content-between">
+          <div class="d-flex flex-column justify-content-between">
+            <p class="mb-0" style="color: #878a8f;"><%= entity.name %></p>
+            <p class="mb-0" style="color: #989da3; font-size: 12px;"><%= entity.created_at.strftime("%d %b %Y") %></p>
+          </div>
           <div>
-            <div class="">
-              <%= entity.name %>
-            </div>
+            <p class="mb-0" style="color: #434c55;">$<%= entity.amount %></p>
           </div>
         </div>
       </li>
@@ -30,4 +24,4 @@
     </li>
   <% end %>
 </ul>
-<%= link_to 'Add Entity', new_user_group_entity_path(@user.id, @group.id), class: "btn btn-success" %>
+<%= link_to 'Add Entity', new_user_group_entity_path(@user.id, @group.id), class: "m-3 btn btn-outline-primary" %>
