@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+
+$theme-colors: (
+  primary: #3778c2,
+  secondary: #434c55,
+);
+
+@import "bootstrap";
+
+body {
+  background-color: #f5f6f8;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

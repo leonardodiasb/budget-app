@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :entities
 
   validates :name, presence: true
+
+  def total_expenses_user
+    entities.sum(:amount)
+  end
 end
