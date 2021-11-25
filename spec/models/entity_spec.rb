@@ -19,7 +19,7 @@ RSpec.describe Entity, type: :model do
     end
 
     it 'should not be valid with empty fields' do
-      @entity.amount= nil
+      @entity.amount = nil
       expect(@entity).to_not be_valid
     end
 

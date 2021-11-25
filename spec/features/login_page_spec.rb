@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Home Page', type: :features do
-  
   describe 'Register' do
     before(:each) do
       visit '/'

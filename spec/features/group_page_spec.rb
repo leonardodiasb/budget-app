@@ -38,7 +38,7 @@ RSpec.describe 'Group Page', type: :features do
     it 'I can see the new category in the page' do
       find('a', text: 'Add Category').click
       fill_in 'Name', with: 'Bus to work'
-      select "Transportation", :from => "group_icon"
+      select 'Transportation', from: 'group_icon'
       click_button 'Save'
       expect(page).to have_content('Bus to work')
     end
