@@ -24,7 +24,7 @@
   <div><p class="m-0" style="color: #434c55;">$<%= @total %></p></div>
 </div>
 <ul class="d-flex flex-column ms-3 me-3" style="">
-  <% @groups.includes(:user).each do |group| %>
+  <% @groups.each do |group| %>
     <%= link_to user_group_path(user_id: @user.id, id: group.id) do %>
       <li class="mt-3 p-2 bg-white shadow-sm bg-body">
         <div class="float-start me-2">
