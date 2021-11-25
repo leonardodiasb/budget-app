@@ -6,6 +6,7 @@
 
 ![Ruby](https://img.shields.io/badge/Ruby-20232A?style=for-the-badge&logo=ruby&logoColor=61DAFB)
 - Ruby v3.0.2
+- Rails 6.1.4.1
 
 ## Live Demo
 
