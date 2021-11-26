@@ -1,0 +1,46 @@
+<header style="background-color: #3778c2;">
+  <div class="d-flex justify-content-between align-items-center p-2 pt-0 pb-0">
+    <div>
+      <%= link_to :back, class: "text-white" do %> 
+        <i class="bi bi-arrow-left-short", style="font-size: 44px"></i>
+      <% end %>
+    </div>
+    <div>
+      <p class="mb-0 text-white">REGISTER</p>
+    </div>
+    <div>
+      <label for="submit-form" tabindex="0" class="text-white" >Sign up</label>
+    </div>
+  </div>
+</header>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="mt-4 border-top border-bottom h-auto d-flex flex-column" >
+    <div class="field">
+      <%= f.label :name, class: "d-none" %>
+      <%= f.text_field :name, class: "p-2 ps-3 w-100 border-0", style: "color: #989da3" , placeholder: "Full Name", autofocus: true, autocomplete: "name" %>
+    </div>
+    <hr class="m-0 p-0 align-self-center" style="height:1px;width:90%;border-width:0;color:#989da3;background-color:#989da3">
+    <div class="field">
+      <%= f.label :email, class: "d-none" %>
+      <%= f.email_field :email, class: "p-2 ps-3 w-100 border-0", style: "color: #989da3" , placeholder: "Email", autocomplete: "email" %>
+    </div>
+    <hr class="m-0 p-0 align-self-center" style="height:1px;width:90%;border-width:0;color:#989da3;background-color:#989da3">
+    <div class="field">
+      <%= f.label :password, class: "d-none" %>
+      <%= f.password_field :password, class: "p-2 ps-3 w-100 border-0", style: "color: #989da3" , placeholder: "Password", autocomplete: "new-password" %>
+    </div>
+    <hr class="m-0 p-0 align-self-center" style="height:1px;width:90%;border-width:0;color:#989da3;background-color:#989da3">
+    <div class="field">
+      <%= f.label :password_confirmation, class: "d-none" %>
+      <%= f.password_field :password_confirmation, class: "p-2 ps-3 w-100 border-0", style: "color: #989da3;" , placeholder: "Password Confirmation", autocomplete: "new-password" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", id: "submit-form", class: "d-none" %>
+  </div>
+<% end %>
+<div class="mt-4 d-flex flex-column text-center">
+  <%= render "devise/shared/links" %>
+</div>
