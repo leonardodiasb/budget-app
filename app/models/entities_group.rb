@@ -1,2 +1,0 @@
-class EntitiesGroup < ApplicationRecord
-end
